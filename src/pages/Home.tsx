@@ -45,8 +45,8 @@ const Home: FC = () => {
   return (
     <div>
       <PageMeta
-        title="Обо мне — Владимир Борисенко"
-        description="Опытный психиатр с более чем 30-летним стажем..."
+        title="Онлайн школа естественных наук"
+        description="Репетитор, КРОК, НМТ"
       />
       <section className={cls.section}>
         <Hero />

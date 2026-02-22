@@ -147,7 +147,7 @@ export const translations: Record<"UA" | "RU" | "EN", Translations> = {
     "aboutMini.paragraph5":
       "Наша мета — не просто підготувати до іспитів, а сформувати наукове мислення та впевненість у власних знаннях.",
     "button.learnMore": "Дізнатися більше",
-    "footer.copyright": "© {year} Борисенко Володимир Васильович",
+    "footer.copyright": "© {year} Карпич Владислав Сегрійович",
     "footer.subtitle": "Лікар-психіатр, психотерапевт",
     "header.home": "Головна",
     "header.about": "Про мене",
@@ -280,7 +280,7 @@ export const translations: Record<"UA" | "RU" | "EN", Translations> = {
     "aboutMini.paragraph5":
       "Наша мета — не просто підготувати до іспитів, а сформувати наукове мислення та впевненість у власних знаннях.",
     "button.learnMore": "Дізнатися більше",
-    "footer.copyright": "© {year} Борисенко Владимир Васильевич",
+    "footer.copyright": "© {year} Карпич Владислав Сергійович",
     "footer.subtitle": "Врач-психиатр, психотерапевт",
     "header.home": "Главная",
     "header.about": "Обо мне",
