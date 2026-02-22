@@ -1,11 +1,13 @@
-@use "./styles/variables" as *;
+@use './styles/theme-light' as light;
+@use './styles/theme-dark' as dark;
+@use './styles/fonts' as fonts;
+
+/* базовые стили */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -13,66 +15,63 @@
 }
 
 a {
-  color: $color-primary;
   text-decoration: none;
-
-}
-body {
-  font-family: $font-family-base;
-  background-color: $color-background;
-  color: $color-text;
 }
 
-h1,
-h2,
-h3 {
-  font-family: $font-family-heading;
-  color: $color-heading;
-  margin-bottom: 0.5em;
+/* ---------- LIGHT THEME ---------- */
+body.light {
+  font-family: fonts.$font-family-base;
+  background-color: light.$color-background;
+  color: light.$color-text;
 }
-h1 {
-  font-size: 2.5em;
-  line-height: 1.1;
-}
-h2 {
-  font-size: 2.1em;
-  line-height: 1.1;
-}
-h3 {
-  font-size: 1.2em;
-  line-height: 1.1;
-}
-.section {
-  background-color: $color-surface;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      width: 100%;
-    max-width: 100%;
+body.light .content {
+  font-family: fonts.$font-family-base;
+  background-color: light.$color-background;
+  color: light.$color-text;
 }
 
-.button {
-  background-color: $color-primary;
+body.light a {
+  color: light.$color-primary;
+}
+
+body.light .section {
+  background-color: light.$color-surface;
+}
+
+
+body.light .button {
+  background-color: light.$color-primary;
   color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
 
   &:hover {
-    background-color: darken($color-primary, 10%);
+    background-color: light.$color-primary-dark;
   }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+/* ---------- DARK THEME ---------- */
+body.dark {
+  font-family: fonts.$font-family-base; // шрифт одинаковый
+  background-color: dark.$dark-color-background;
+  color: dark.$dark-color-text;
+}
+body.dark .content {
+  font-family: fonts.$font-family-base; // шрифт одинаковый
+  background-color: dark.$dark-color-background;
+  color: dark.$dark-color-text;
+}
+
+body.dark a {
+  color: dark.$dark-color-primary;
+}
+
+body.dark section {
+  background-color: dark.$dark-color-surface;
+}
+body.dark .button {
+  background-color: dark.$dark-color-primary;
+  color: #0E1B15;
+
+  &:hover {
+    background-color: dark.$dark-color-primary-dark;
   }
 }

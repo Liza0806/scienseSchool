@@ -9,9 +9,12 @@ import WorkFormat from "../components/WorkFormat";
 import Hero from "../components/Hero";
 import ConsultationModal from "../components/ConsultationModal";
 import { useLocation } from "react-router";
+import TeachersSection from "../components/TeachersSection";
+import CoursesSection from "../components/CoursesSection";
+import LearningFormatsSection from "../components/LearningFormatsSection";
+import WorkInfoSection from "../components/WorkInfoSection";
 
 const Home: FC = () => {
-
   const { ref: ref0, inView: inView0 } = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -35,7 +38,7 @@ const Home: FC = () => {
     const scrollPosition = localStorage.getItem("scrollPosition");
     if (scrollPosition) {
       window.scrollTo(0, parseInt(scrollPosition, 10));
-      localStorage.removeItem("scrollPosition"); 
+      localStorage.removeItem("scrollPosition");
     }
   }, [location]);
 
@@ -49,40 +52,51 @@ const Home: FC = () => {
         <Hero />
       </section>
 
-      <section className={`${cls.image0} ${cls.parallaxSection}`} ref={ref0}>
+      {/* <section className={`${cls.image0} ${cls.parallaxSection}`} ref={ref0}>
         <QuoteBlock
           text="Служил Гаврила за прилавком.
 Гаврила флейтой торговал…"
           isVisible={inView0}
         />
+      </section> */}
+
+      <section className={cls.section}>
+        <CoursesSection />
       </section>
 
       <section className={cls.section}>
         <AboutMini />
       </section>
 
-      <section className={`${cls.image1} ${cls.parallaxSection}`} ref={ref1}>
+      <section className={cls.section}>
+        <TeachersSection />
+      </section>
+      
+      <section className={cls.section}>
+        <LearningFormatsSection />
+      </section>
+      {/* <section className={`${cls.image1} ${cls.parallaxSection}`} ref={ref1}>
         <QuoteBlock
           text="Гаврила шёл кудрявым лесом,
 Бамбук Гаврила порубал. "
           isVisible={inView1}
         />
-      </section>
+      </section> */}
 
-      <section className={cls.section}>
+      {/* <section className={cls.section}>
         <ServicesList />
-      </section>
-      <section className={`${cls.image2} ${cls.parallaxSection}`} ref={ref2}>
+      </section> */}
+      {/* <section className={`${cls.image2} ${cls.parallaxSection}`} ref={ref2}>
         <QuoteBlock
           text="Служил Гаврила хлебопеком,
 Гаврила булку испекал…"
           isVisible={inView2}
         />
-      </section>
+      </section> */}
       <section className={cls.section}>
-        <WorkFormat />
+        <WorkInfoSection />
       </section>
-       <ConsultationModal />
+      <ConsultationModal />
     </div>
   );
 };

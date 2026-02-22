@@ -1,4 +1,6 @@
-@use "../styles/variables" as *;
+@use '../styles/theme-light' as light;
+@use '../styles/theme-dark' as dark;
+@use '../styles/fonts' as fonts;
 
 @keyframes fadeInUp {
   0% {
@@ -12,18 +14,32 @@
 }
 
 .wrapper {
-  background-color: $color-surface;
   padding: 2rem 2rem;
   border-radius: 2rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   margin: 2rem 0;
   text-align: center;
 
+  body.light & {
+    background-color: light.$color-surface;
+  }
+
+  body.dark & {
+    background-color: dark.$dark-color-surface;
+  }
+
   h2 {
-    font-family: $font-family-heading;
+
     font-size: 2.2rem;
-    color: $color-heading;
     margin-bottom: 1.5rem;
+
+    body.light & {
+      color: light.$color-heading;
+    }
+
+    body.dark & {
+      color: dark.$dark-color-heading;
+    }
   }
 }
 
@@ -32,12 +48,18 @@
   margin: 0 auto 2rem auto;
   text-align: left;
 
-  p {
-    font-family: $font-family-base;
-    color: $color-text;
+  p {   
     font-size: 1.1rem;
     line-height: 1.1;
     margin-bottom: 1rem;
+
+    body.light & {
+      color: light.$color-text;
+    }
+
+    body.dark & {
+      color: dark.$dark-color-text;
+    }
   }
 }
 
@@ -62,37 +84,65 @@
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
-  background-color: $color-accent-light;
+
   padding: 2rem;
   border-radius: 1.5rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   flex: 0 1 35%;
   text-align: left;
 
-    @media (max-width: 968px) {
-      flex: 0 1 100%;
-    }
+  body.light & {
+    background-color: light.$color-accent-light;
+  }
 
+:global(body.dark) & {
+    background-color: dark.$dark-color-accent-light;
+  }
+
+  @media (max-width: 968px) {
+    flex: 0 1 100%;
+  }
 
   h3 {
-    font-family: $font-family-heading;
+    font-family: fonts.$font-family-heading;
     font-size: 1.2rem;
-    color: $color-primary;
     margin-bottom: 1rem;
+
+    body.light & {
+      color: light.$color-primary;
+    }
+
+    body.dark & {
+      color: dark.$dark-color-primary;
+    }
   }
 
   p {
-    font-family: $font-family-base;
-    color: $color-text;
+    font-family: fonts.$font-family-base;
     font-size: 1rem;
     line-height: 1.1;
     margin-bottom: 1rem;
+
+    body.light & {
+      color: light.$color-text;
+    }
+
+    body.dark & {
+      color: dark.$dark-color-text;
+    }
   }
 
   .price {
     font-size: 1.2rem;
     font-weight: bold;
-    color: $color-secondary;
     margin-top: 1rem;
+
+    body.light & {
+      color: light.$color-secondary;
+    }
+
+    body.dark & {
+      color: dark.$dark-color-secondary;
+    }
   }
 }

@@ -1,4 +1,7 @@
-@use "../styles/variables" as *;
+@use '../styles/theme-light' as light;
+@use '../styles/theme-dark' as dark;
+@use '../styles/fonts' as fonts;
+
 
 .skyBackground {
   position: relative;
@@ -15,7 +18,7 @@
 }
 .wordRow {
   span {
-    font-family: $font-cloud-words, cursive;
+    // font-family: $font-cloud-words, cursive;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

@@ -1,11 +1,21 @@
-@use "../styles/variables" as *;
+@use "../styles/theme-light" as light;
+@use "../styles/theme-dark" as dark;
+@use "../styles/fonts" as fonts;
 
 .footer {
-  background: $color-primary;
   padding: 2rem 1rem;
-  color: $color-background;
+  font-family: fonts.$font-family-base;
 
-   
+  :global(body.light) & {
+    background-color: light.$color-surface;
+    color: light.$color-text;
+  }
+
+  :global(body.dark) & {
+    background-color: dark.$dark-color-surface;
+    color: dark.$dark-color-text;
+  }
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -18,17 +28,22 @@
     justify-content: space-around;
     align-items: center;
 
- @media (max-width:768px) {
+    @media (max-width: 768px) {
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
     }
+
     a {
-      color: inherit;
+      color: light.$color-text;
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+
+      :global(body.dark) & {
+        color: dark.$dark-color-text;
+      }
 
       &:hover {
         text-decoration: underline;
@@ -36,7 +51,11 @@
 
       svg {
         font-size: 1.2rem;
-        color: $color-background;
+        color: light.$color-text;
+
+        :global(body.dark) & {
+          color: dark.$dark-color-text;
+        }
       }
     }
 
@@ -49,11 +68,18 @@
   .bottomInfo {
     margin-top: 1rem;
     font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
 
-    @media (max-width:768px) {
+    :global(body.light) & {
+      color: light.$color-text;
+    }
+
+    :global(body.dark) & {
+      color: dark.$dark-color-text;
+    }
+
+    @media (max-width: 768px) {
       flex-direction: column;
       align-items: center;
       gap: 0.3rem;

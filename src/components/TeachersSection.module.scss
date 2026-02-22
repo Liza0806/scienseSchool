@@ -1,0 +1,164 @@
+@use '../styles/theme-light' as light;
+@use '../styles/theme-dark' as dark;
+@use '../styles/fonts' as fonts;
+
+.teachers {
+  padding: 4rem 2rem;
+  background: light.$color-background;
+  font-family: fonts.$font-family-base;
+}
+
+.title {
+  text-align: center;
+  font-family: fonts.$font-family-heading;
+  font-size: 2.5rem;
+  color: light.$color-heading;
+  margin-bottom: 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* CARD */
+.card {
+  background: light.$color-surface;
+  border: 1px solid light.$color-border;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+  transition: transform .3s ease, box-shadow .3s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.1);
+  }
+}
+
+/* IMAGE */
+.photoWrapper {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-color: light.$color-accent-light;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* CONTENT */
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.name {
+  font-family: fonts.$font-family-heading;
+  font-size: 1.4rem;
+  color: light.$color-primary;
+  margin-bottom: 0.5rem;
+}
+
+.subjects {
+  font-size: 0.9rem;
+  color: light.$color-muted;
+  margin-bottom: 1rem;
+}
+
+.bio {
+  font-size: 1rem;
+  color: light.$color-text;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* BUTTON */
+.button {
+  margin-top: 1.2rem;
+  align-self: flex-start;
+  background: light.$color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 0.6rem 1.3rem;
+  font-family: fonts.$font-family-base;
+  cursor: pointer;
+  transition: background-color .3s ease;
+
+  &:hover {
+    background: light.$color-primary-dark;
+  }
+}
+
+/* 🌙 DARK THEME */
+.dark {
+  background: dark.$dark-color-background;
+
+  .title {
+    color: dark.$dark-color-heading;
+  }
+
+  .card {
+    background-color: dark.$dark-color-surface;
+    border-color: dark.$dark-color-border;
+  }
+
+  .photoWrapper {
+    background: dark.$dark-color-accent-light;
+  }
+
+  .name {
+    color: dark.$dark-color-primary;
+  }
+
+  .subjects {
+    color: dark.$dark-color-muted;
+  }
+
+  .bio {
+    color: dark.$dark-color-text;
+  }
+
+  .button {
+    background-color: dark.$dark-color-primary;
+
+    &:hover {
+      background-color: dark.$dark-color-primary-dark;
+    }
+  }
+}
+
+/* 📱 768px */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .photoWrapper {
+    height: 220px;
+  }
+}
+
+/* 📱 440px */
+@media (max-width: 440px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .photoWrapper {
+    height: 200px;
+  }
+}

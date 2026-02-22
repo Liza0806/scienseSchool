@@ -1,39 +1,139 @@
-@use "../styles/variables" as *;
+@use '../styles/theme-light' as light;
+@use '../styles/theme-dark' as dark;
+@use '../styles/fonts' as fonts;
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
-  text-align: center;
-  padding: 2rem;
-
-  h1 {
-    font-size: 3rem;
-    color: $color-primary;
-    margin-bottom: 1rem;
+// -----------------------------------
+// Миксин для темы
+// -----------------------------------
+@mixin theme($light-prop, $dark-prop) {
+  #{$light-prop} {
+    body.light & {
+      @content;
+    }
+    body.dark & {
+      @content;
+      @each $prop, $val in $dark-prop {
+        #{$prop}: #{$val};
+      }
+    }
   }
+}
+
+// -----------------------------------
+// Пример для карточек услуг
+// -----------------------------------
+.serviceCard {
+  transform: translateY(20px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  // Фон карточки
+  background-color: light.$color-accent-light;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  flex: 0 1 35%;
+  text-align: left;
+
+  body.dark & {
+    background-color: dark.$dark-color-accent-light;
+  }
+
+  @media (max-width: 968px) {
+    flex: 0 1 100%;
+  }
+
+  // Заголовок
+  h3 {
+    font-family: fonts.$font-family-heading;
+    font-size: 1.2rem;
+    color: light.$color-primary;
+    margin-bottom: 1rem;
+
+    body.dark & {
+      color: dark.$dark-color-primary;
+    }
+  }
+
+  // Описание
+  p {
+    font-family: fonts.$font-family-base;
+    color: light.$color-text;
+    font-size: 1rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+
+    body.dark & {
+      color: dark.$dark-color-text;
+    }
+  }
+
+  // Цена
+  .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: light.$color-secondary;
+    margin-top: 1rem;
+
+    body.dark & {
+      color: dark.$dark-color-secondary;
+    }
+  }
+}
+
+// -----------------------------------
+// Пример для wrapper всего блока
+// -----------------------------------
+.wrapper {
+  background-color: light.$color-surface;
+  padding: 2rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin: 2rem 0;
+  text-align: center;
+
+  body.dark & {
+    background-color: dark.$dark-color-surface;
+  }
+
+  h2 {
+    font-family: fonts.$font-family-heading;
+    font-size: 2.2rem;
+    color: light.$color-heading;
+    margin-bottom: 1.5rem;
+
+    body.dark & {
+      color: dark.$dark-color-heading;
+    }
+  }
+}
+
+// -----------------------------------
+// Описание блока
+// -----------------------------------
+.description {
+  max-width: 85%;
+  margin: 0 auto 2rem auto;
+  text-align: left;
 
   p {
-    font-size: 1.2rem;
-    color: $color-secondary;
-    max-width: 500px;
-    margin-bottom: 2rem;
-  }
+    font-family: fonts.$font-family-base;
+    color: light.$color-text;
+    font-size: 1.1rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
 
-  .button {
-    padding: 0.8rem 1.5rem;
-    background-color: $color-primary;
-    color: white;
-    border: none;
-    border-radius: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: $color-primary;
+    body.dark & {
+      color: dark.$dark-color-text;
     }
   }
 }

@@ -1,0 +1,190 @@
+@use "../styles/theme-light" as light;
+@use "../styles/theme-dark" as dark;
+@use "../styles/fonts" as fonts;
+
+.container {
+  padding: 2rem;
+}
+
+.card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+
+  body.light & {
+    background-color: light.$color-surface;
+    color: light.$color-text;
+  }
+  :global(body.dark) & {
+    background-color: dark.$dark-color-surface;
+    color: dark.$dark-color-text;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    font-family: fonts.$font-family-heading;
+
+    body.light & {
+      color: light.$color-primary;
+    }
+    :global(body.dark) & {
+      color: dark.$dark-color-primary;
+    }
+  }
+
+  p {
+    line-height: 1.5;
+    font-family: fonts.$font-family-base;
+
+    body.light & {
+      color: light.$color-text;
+    }
+    :global(body.dark) & {
+      color: dark.$dark-color-text;
+    }
+  }
+}
+
+.sectionWrapper {
+  position: relative;
+  padding: 5rem 2rem;
+}
+
+.topLeft {
+  top: -100px;
+  left: -100px;
+}
+
+.bottomRight {
+  bottom: -100px;
+  right: -100px;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+
+  body.light & {
+    color: light.$color-primary;
+  }
+  :global(body.dark) & {
+    color: dark.$dark-color-primary;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  body.light & {
+    color: light.$color-primary;
+  }
+  :global(body.dark) & {
+    color: dark.$dark-color-primary;
+  }
+}
+
+.decorativeLine {
+  width: 50px;
+  height: 3px;
+
+  body.light & {
+    background: light.$color-primary;
+  }
+  :global(body.dark) & {
+    background-color: dark.$dark-color-primary;
+  }
+
+  margin: 1rem 0;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+
+  body.light & {
+    color: light.$color-text;
+  }
+  :global(body.dark) & {
+    color: dark.$dark-color-text;
+  }
+}
+
+.whisper {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1rem;
+  font-style: italic;
+
+  body.light & {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  :global(body.dark) & {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.accordionGrid {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+
+    details {
+      margin-bottom: 1rem;
+
+      summary {
+        cursor: pointer;
+        font-weight: bold;
+        padding: 1rem;
+        border-radius: 0.5rem;
+
+        body.light & {
+          background: light.$color-surface;
+          color: light.$color-text;
+        }
+        :global(body.dark) & {
+          background-color: dark.$dark-color-surface;
+          color: dark.$dark-color-text;
+        }
+      }
+
+      p {
+        margin-top: 0.5rem;
+        padding: 0 1rem;
+
+        body.light & {
+          color: light.$color-text;
+        }
+        :global(body.dark) & {
+          color: dark.$dark-color-text;
+        }
+      }
+    }
+  }
+}

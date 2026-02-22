@@ -8,22 +8,22 @@ import "./index.scss";
 import { LanguageProvider } from "./context/LanguageContext";
 import GlobalErrorBoundary from "./components/GlobalErrorBoundary";
 import { ModalProvider } from "./context/ModalContext";
-
+import { ThemeProvider } from "./context/ThemeContext";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
- 
+    <ThemeProvider>
       <LanguageProvider>
-          <ModalProvider>
-               <HelmetProvider>
-          <BrowserRouter>
-             <GlobalErrorBoundary>
-              <App />
-             </GlobalErrorBoundary>
-          </BrowserRouter>
-        </HelmetProvider>
-          </ModalProvider>
+        <ModalProvider>
+          <HelmetProvider>
+            <BrowserRouter>
+              <GlobalErrorBoundary>
+                <App />
+              </GlobalErrorBoundary>
+            </BrowserRouter>
+          </HelmetProvider>
+        </ModalProvider>
       </LanguageProvider>
-  </React.StrictMode>
+    </ThemeProvider>
+  </React.StrictMode>,
 );
-

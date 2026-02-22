@@ -8,8 +8,9 @@ import GlobalErrorCatcher from './hooks/GlobalErrorCatcher';
 import Loader from './components/Loader';
 
 const Home = lazy(() => import('./pages/Home'));
-const About = lazy(() => import('./pages/About'));
-const WorkInfoSection = lazy(() => import('./pages/WorkInfoSection'));
+// const About = lazy(() => import('./pages/About'));
+const LearningFormatsSection = lazy(() => import('./components/LearningFormatsSection'));
+const WorkInfoSection = lazy(() => import('./components/WorkInfoSection'));
 const Options = lazy(() => import('./pages/Options'));
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />} > 
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="about" element={<LearningFormatsSection />} />
           <Route path="WorkInfoSection" element={<WorkInfoSection />} />
           <Route path="options" element={<Options />} />
           <Route path="error" element={<ErrorBoundaryPage />} />

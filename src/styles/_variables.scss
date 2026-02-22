@@ -1,17 +1,3 @@
-$font-family-base: 'Inter', sans-serif;
-$font-family-heading: "Playfair Display", serif;
-$font-cloud-words: 'Marck Script';
-
-$color-background: #F8F9FA;    // Светло-серый (основной фон)
-$color-surface:    #FFFFFF;     // Карточки, секции
-$color-primary:    #2E5C8F;     // Акцентный глубокий синий (для кнопок, ссылок, иконок)
-$color-secondary:  #4F758B;     // Вторичный акцент (мягкий синий-стальной)
-
-$color-heading:    #222222;     // Заголовки (чуть темнее для контраста)
-$color-text:       #333333;     // Основной текст
-$color-muted:      #6C757D;     // Подписи, второстепенный текст (серый)
-
-$color-accent-light: #E1ECF4;   // Лёгкий фон под акцентные блоки (например, карточки услуг)
-$color-border:       #DDE2E5;   // Линии, границы карточек
-$color-error:        #D9534F;   // Сообщения об ошибках, предупреждения
-$color-success:      #5CB85C;   // Сообщения об успехе (если нужно)
+@forward './fonts';
+@forward './theme-light';
+@forward './theme-dark';

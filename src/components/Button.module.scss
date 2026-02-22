@@ -1,20 +1,35 @@
-@use "../styles/variables" as *;
+@use '../styles/theme-light' as light;
+@use '../styles/theme-dark' as dark;
+@use '../styles/fonts' as fonts;
 
 .button {
   display: block;
   margin: 1.5rem auto 0;
-  background-color: $color-primary;
+  background-color: light.$color-primary;
   color: white;
   padding: 0.8rem 2rem;
   border-radius: 10px;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  box-shadow: 0 6px 12px rgba($color-primary, 0.4);
+  box-shadow: 0 6px 12px rgba(light.$color-primary, 0.4);
+  font-family: fonts.$font-family-base;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    background-color: darken($color-primary, 10%);
-    box-shadow: 0 8px 16px rgba($color-primary, 0.6);
+    background-color: light.$color-primary-dark;
+    box-shadow: 0 8px 16px rgba(light.$color-primary, 0.6);
+  }
+
+  /* для темной темы */
+  body.dark & {
+    background-color: dark.$dark-color-primary;
+    color: #0E1B15;
+    box-shadow: 0 6px 12px rgba(dark.$dark-color-primary, 0.4);
+
+    &:hover {
+      background-color: dark.$dark-color-primary-dark;
+      box-shadow: 0 8px 16px rgba(dark.$dark-color-primary, 0.6);
+    }
   }
 }

@@ -1,14 +1,13 @@
-@use "../styles/variables" as *;
+@use '../styles/theme-light' as light;
+@use '../styles/theme-dark' as dark;
+@use '../styles/fonts' as fonts;
 
 .section {
   width: 85vw;
   margin: 2rem auto;
-  
-  background-color: $color-background;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
-
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -16,37 +15,52 @@
   line-height: 1.5;
   overflow: hidden;
 
-    @media (max-width: 768px) {
-      padding: 0;
-    }
+  // Тема
+  body.light & {
+    background-color: light.$color-surface;
+
+  }
+  body.dark & {
+    background-color: dark.$dark-color-surface;
+
+  }
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
   h1 {
     display: inline-flex;
     align-items: center;
   }
 }
 
-.image0 {
-  background: url("/image0.webp");
-}
-.image1 {
-  background: url("/image1.webp");
-}
-.image2 {
-  background: url("/image2.webp");
-}
-.image3 {
-  background: url("/image3.webp");
-}
+// Фоны изображений
+.image0 { background: url("/image0.webp"); }
+.image1 { background: url("/image1.webp"); }
+.image2 { background: url("/image2.webp"); }
+.image3 { background: url("/image3.webp"); }
+
 .image0,
 .image1,
 .image2,
-.image2 {
+.image3 {
   width: 100%;
   min-height: 90vh;
   display: grid;
   background-position: center;
   background-size: cover;
   background-attachment: fixed; // параллакс эффект
+}
+
+// Если хочешь менять фильтры или цвета изображений в dark/light
+:global(body.dark) {
+  .image0,
+  .image1,
+  .image2,
+  .image3 {
+    filter: brightness(0.6);
+  }
 }
 .parallaxSection {
   height: 80vh;

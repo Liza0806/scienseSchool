@@ -1,7 +1,7 @@
 @use "sass:color";
-@use "../styles/variables" as *;
-
-
+@use '../styles/theme-light' as light;
+@use '../styles/theme-dark' as dark;
+@use '../styles/fonts' as fonts;
 
 .loaderWrapper {
   display: flex;
@@ -9,14 +9,33 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #fff;
   overflow: hidden;
   position: relative;
+
+  /* Light theme */
+  body.light & {
+    background-color: light.$color-background;
+  }
+
+  /* Dark theme */
+  body.dark & {
+    background-color: dark.$dark-color-background;
+  }
 }
 
 .hypnoticCircle {
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid $color-primary;
+
+  /* Light theme */
+  body.light & {
+    border-top: 4px solid light.$color-primary;
+  }
+
+  /* Dark theme */
+  body.dark & {
+    border-top: 4px solid dark.$dark-color-primary;
+  }
+
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -26,15 +45,27 @@
   &:nth-child(2) {
     width: 150px;
     height: 150px;
-    border-top-color: $color-secondary;
     animation-duration: 4.5s;
+
+    body.light & {
+      border-top-color: light.$color-secondary;
+    }
+    body.dark & {
+      border-top-color: dark.$dark-color-secondary;
+    }
   }
 
   &:nth-child(3) {
     width: 200px;
     height: 200px;
-    border-top-color: color.adjust($color-secondary, $lightness: 20%);
     animation-duration: 6s;
+
+    body.light & {
+      border-top-color: color.adjust(light.$color-secondary, $lightness: 20%);
+    }
+    body.dark & {
+      border-top-color: color.adjust(dark.$dark-color-secondary, $lightness: 20%);
+    }
   }
 }
 
@@ -43,9 +74,15 @@
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, $color-primary 60%, transparent 60.5%);
   animation: pulse 2s infinite ease-out;
   opacity: 0.6;
+
+  body.light & {
+    background: radial-gradient(circle, light.$color-primary 60%, transparent 60.5%);
+  }
+  body.dark & {
+    background: radial-gradient(circle, dark.$dark-color-primary 60%, transparent 60.5%);
+  }
 
   &:nth-child(2) {
     animation-delay: 1s;
@@ -57,46 +94,36 @@
   z-index: 2;
   font-size: 2rem;
   font-weight: bold;
-  color: $color-primary;
-  background: white;
-  padding: 1rem 2rem;
   border-radius: 1rem;
   animation: pulseText 2s infinite;
+
+  /* Light theme */
+  body.light & {
+    color: light.$color-primary;
+    background: light.$color-surface;
+  }
+
+  /* Dark theme */
+  body.dark & {
+    color: dark.$dark-color-primary;
+    background: dark.$dark-color-surface;
+  }
+
+  padding: 1rem 2rem;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes pulse {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0.6;
-  }
-  100% {
-    width: 300vmax;
-    height: 300vmax;
-    opacity: 0;
-  }
+  0% { width: 0; height: 0; opacity: 0.6; }
+  100% { width: 300vmax; height: 300vmax; opacity: 0; }
 }
 
 @keyframes pulseText {
-  0% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
+  0% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.5; transform: scale(1); }
 }

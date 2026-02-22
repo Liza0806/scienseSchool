@@ -1,0 +1,136 @@
+@use "../styles/theme-light" as light;
+@use "../styles/theme-dark" as dark;
+@use "../styles/fonts" as fonts;
+
+.formats {
+  padding: 4rem 2rem;
+  border-radius: 2rem;
+
+  &.light {
+    background-color: light.$color-background;
+    color: light.$color-text;
+  }
+
+  &.dark {
+    background-color: dark.$dark-color-background;
+    color: dark.$dark-color-text;
+  }
+}
+
+.title {
+  font-family: fonts.$font-family-heading;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .light & {
+    color: light.$color-heading;
+  }
+
+  .dark & {
+    color: dark.$dark-color-heading;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  .light & {
+    background-color: light.$color-surface;
+  }
+
+  .dark & {
+    background-color: dark.$dark-color-surface;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.cardTitle {
+  font-family: fonts.$font-family-heading;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+
+  .light & {
+    color: light.$color-primary;
+  }
+
+  .dark & {
+    color: dark.$dark-color-primary;
+  }
+}
+
+.cardDesc {
+  font-family: fonts.$font-family-base;
+  margin-bottom: 1.5rem;
+  color: inherit;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+
+  li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.6rem;
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+
+      .light & {
+        color: light.$color-success;
+      }
+
+      .dark & {
+        color: dark.$dark-color-success;
+      }
+    }
+  }
+}
+
+.button {
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  font-family: fonts.$font-family-base;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  .light & {
+    background-color: light.$color-primary;
+    color: white;
+
+    &:hover {
+      background-color: light.$color-primary-dark;
+    }
+  }
+
+  .dark & {
+    background-color: dark.$dark-color-primary;
+    color: #0e1b15;
+
+    &:hover {
+      background-color: dark.$dark-color-primary-dark;
+    }
+  }
+}
