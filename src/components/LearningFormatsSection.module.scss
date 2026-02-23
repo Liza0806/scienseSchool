@@ -37,7 +37,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 920px) {
     grid-template-columns: 1fr;
   }
 }

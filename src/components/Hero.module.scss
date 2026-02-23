@@ -2,6 +2,18 @@
 @use '../styles/theme-dark' as dark;
 @use '../styles/fonts' as fonts;
 
+
+.heroWrapper {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 1.8rem;
+ flex-wrap: wrap;
+  @media (max-width: 768px) {
+    
+  }
+}
+
 .info {
   display: flex;
   flex-direction: column;
@@ -10,21 +22,18 @@
   gap: 1.8rem;
   flex: 1;
   height: 100%;
+  min-width: 600px;
 
   > div {
     flex: 1;
   }
   @media (max-width: 768px) {
-    position: absolute;
-    right: 15%;
-    width: 70%;
-    height: 80%;
-    z-index: 998;
-    border-radius: 12px;
-    padding: 1rem;
 
     h1{
 font-size: 1.9em;
+    }
+     h3{
+  overflow-wrap: break-word;
     }
     .abilities {
       flex-direction: column;

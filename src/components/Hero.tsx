@@ -9,7 +9,11 @@ const Hero = () => {
   const { openModal } = useModalContext();
 
   return (
-    <>
+    <div>
+<div className={cls.heroWrapper}>
+     <div className={cls.photoWrapper}>
+              <img src="../../public/photo_2026-02-22_17-13-10-removebg-preview.png" alt="Логотип школи"/>
+            </div>
       <div className={cls.info}>
         <h1>{t("hero.schoolTitle")}</h1>
         <h3>{t("hero.subtitle")}</h3>
@@ -19,12 +23,10 @@ const Hero = () => {
           <li>{t("hero.ability.three")}</li>
           <li>{t("hero.ability.four")}</li>
         </ul>
-        <Button text={t("button.bookAppointment")} onClick={openModal} />
       </div>
-   <div className={cls.photoWrapper}>
-              <img src="../../public/photo_2026-02-22_17-13-10-removebg-preview.png" alt="Логотип школи"/>
-            </div>
-    </>
+    </div>
+        <Button text={t("button.bookAppointment")} onClick={openModal} />
+    </div>
   );
 };
 

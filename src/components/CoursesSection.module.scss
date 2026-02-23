@@ -21,14 +21,14 @@
 
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  width: 100%;
 
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
 
-  @media (max-width: 992px) {
-    display: none;
+  @media (max-width: 1140px) {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
+
 }
 
 .accordionGrid {
