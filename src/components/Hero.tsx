@@ -10,22 +10,30 @@ const Hero = () => {
 
   return (
     <div>
-<div className={cls.heroWrapper}>
-     <div className={cls.photoWrapper}>
-              <img src="../../public/photo_2026-02-22_17-13-10-removebg-preview.png" alt="Логотип школи"/>
-            </div>
-      <div className={cls.info}>
-        <h1>{t("hero.schoolTitle")}</h1>
-        <h3>{t("hero.subtitle")}</h3>
-        <ul className={cls.abilities}>
-          <li>{t("hero.ability.one")}</li>
-          <li>{t("hero.ability.two")}</li>
-          <li>{t("hero.ability.three")}</li>
-          <li>{t("hero.ability.four")}</li>
-        </ul>
+      <div className={cls.heroWrapper}>
+        <div className={cls.photoWrapper}>
+          <div className={cls.droppingTexts }>
+            <div>Developers</div>
+            <div>Designers</div>
+            <div>Coders</div>
+            <div>EVERYONE!</div>
+          </div>
+        </div>
+        <div className={cls.info}>
+          <div className={cls.headOne}>
+            <h1>{t("hero.schoolTitle")}</h1>
+          </div>
+          <div className={cls.infoBottom}><h3>{t("hero.subtitle")}</h3>
+          <ul className={cls.abilities}>
+            <li>{t("hero.ability.one")}</li>
+            <li>{t("hero.ability.two")}</li>
+            <li>{t("hero.ability.three")}</li>
+            <li>{t("hero.ability.four")}</li>
+          </ul></div>
+        
+        </div>
       </div>
-    </div>
-        <Button text={t("button.bookAppointment")} onClick={openModal} />
+      <Button text={t("button.bookAppointment")} onClick={openModal} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
-@use '../styles/theme-light' as light;
-@use '../styles/theme-dark' as dark;
-@use '../styles/fonts' as fonts;
+@use "../styles/theme-light" as light;
+@use "../styles/theme-dark" as dark;
+@use "../styles/fonts" as fonts;
 
 .container {
   display: flex;
@@ -54,11 +54,26 @@
   padding: 24px;
   border-radius: 20px;
   text-align: center;
-  width: 300px;
   font-family: fonts.$font-family-base;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: dark.$dark-color-accent-light;
+
+  > div {
+    display: flex;
+    gap: 0.5rem;
+    >a{
+       color: light.$color-accent-light;
+    }
+  }
 
   body.dark & {
     background-color: dark.$dark-color-surface;
+
+
   }
 }
 
@@ -66,7 +81,7 @@
 .actionButton {
   background-color: light.$color-primary;
   color: light.$color-surface;
-  padding: 10px 0;
+  padding: 10px;
   border-radius: 10px;
   text-decoration: none;
   font-family: fonts.$font-family-base;
