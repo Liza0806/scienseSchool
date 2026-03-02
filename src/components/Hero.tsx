@@ -1,8 +1,12 @@
-import Button from "./Button";
+import Button from "../components/Button";
 import cls from "./Hero.module.scss";
-import HeroLeft from "./HeroLeft";
+import HeroLeft from "../components/HeroLeft";
 import { useTranslation } from "../hooks/useTranslation";
 import { useModalContext } from "../context/ModalContext";
+import IconPupil from "../assets/icons/children.svg?react";
+import IconStudent from "../assets/icons/student.svg?react";
+import IconDoctor from "../assets/icons/doctor.svg?react";
+import IconPeople from "../assets/icons/people.svg?react";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -13,10 +17,22 @@ const Hero = () => {
       <div className={cls.heroWrapper}>
         <div className={cls.photoWrapper}>
           <div className={cls.droppingTexts }>
-            <div>Developers</div>
-            <div>Designers</div>
-            <div>Coders</div>
-            <div>EVERYONE!</div>
+            <div>
+              <IconPupil/>
+              Учням
+              </div>
+            <div>
+              <IconStudent/>
+              Студентам
+            </div>
+            <div>
+              <IconDoctor/>
+              Врачам
+              </div>
+            <div>
+              <IconPeople/>
+               Кожному
+              </div>
           </div>
         </div>
         <div className={cls.info}>

@@ -6,13 +6,13 @@ import { useInView } from "react-intersection-observer";
 import AboutMini from "../components/AboutMini";
 import ServicesList from "../components/ServicesList";
 import WorkFormat from "../components/WorkFormat";
-import Hero from "../components/Hero";
 import ConsultationModal from "../components/ConsultationModal";
 import { useLocation } from "react-router";
 import TeachersSection from "../components/TeachersSection";
 import CoursesSection from "../components/CoursesSection";
 import LearningFormatsSection from "../components/LearningFormatsSection";
 import WorkInfoSection from "../components/WorkInfoSection";
+import Hero from "../components/Hero";
 
 const Home: FC = () => {
   const { ref: ref0, inView: inView0 } = useInView({
