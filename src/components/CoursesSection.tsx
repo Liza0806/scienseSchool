@@ -3,11 +3,13 @@ import cls from "./CoursesSection.module.scss";
 import { useTranslation } from "../hooks/useTranslation";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { useModalContext } from "../context/ModalContext";
 
 const CoursesSection = () => {
   const { t } = useTranslation();
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+  const { openModal } = useModalContext();
 
   const handleNavigate = () => {
     localStorage.setItem("scrollPosition", window.scrollY.toString());
@@ -24,12 +26,12 @@ const CoursesSection = () => {
       //@ts-ignore
       itemsKey: t(`servicesList.courseTwo.item`),
     },
-        {
+    {
       titleKey: t("servicesList.courseThree"),
       //@ts-ignore
       itemsKey: t(`servicesList.courseThree.item`),
     },
-        {
+    {
       titleKey: t("servicesList.courseFour"),
       //@ts-ignore
       itemsKey: t(`servicesList.courseFour.item`),
@@ -39,7 +41,7 @@ const CoursesSection = () => {
       //@ts-ignore
       itemsKey: t(`servicesList.courseFive.item`),
     },
-       {
+    {
       titleKey: t("servicesList.courseSix"),
       //@ts-ignore
       itemsKey: t(`servicesList.courseSix.item`),
@@ -133,7 +135,7 @@ const CoursesSection = () => {
         </div>
       )}
 
-      <Button text={t("servicesList.button")} onClick={handleNavigate} />
+      <Button text={t("servicesList.button")} onClick={openModal} />
     </section>
   );
 };

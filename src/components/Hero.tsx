@@ -16,37 +16,38 @@ const Hero = () => {
     <div>
       <div className={cls.heroWrapper}>
         <div className={cls.photoWrapper}>
-          <div className={cls.droppingTexts }>
+          <div className={cls.droppingTexts}>
             <div>
-              <IconPupil/>
-              Учням
-              </div>
-            <div>
-              <IconPupil/>
-              Студентам
+              <IconPupil />
+              <h3> Учням</h3>
             </div>
             <div>
-              <IconDoctor/>
-              Врачам
-              </div>
+              <IconPupil />
+              <h3>Студентам</h3>
+            </div>
             <div>
-                <IconPupil/>
-               Кожному
-              </div>
+              <IconDoctor />
+              <h3> Врачам</h3>
+            </div>
+            <div>
+              <IconPupil />
+              <h3>Кожному</h3>
+            </div>
           </div>
         </div>
         <div className={cls.info}>
           <div className={cls.headOne}>
             <h1>{t("hero.schoolTitle")}</h1>
           </div>
-          <div className={cls.infoBottom}><h3>{t("hero.subtitle")}</h3>
-          <ul className={cls.abilities}>
-            <li>{t("hero.ability.one")}</li>
-            <li>{t("hero.ability.two")}</li>
-            <li>{t("hero.ability.three")}</li>
-            <li>{t("hero.ability.four")}</li>
-          </ul></div>
-        
+          <div className={cls.infoBottom}>
+            <h2>{t("hero.subtitle")}</h2>
+            <ul className={cls.abilities}>
+              <li>{t("hero.ability.one")}</li>
+              <li>{t("hero.ability.two")}</li>
+              <li>{t("hero.ability.three")}</li>
+              <li>{t("hero.ability.four")}</li>
+            </ul>
+          </div>
         </div>
       </div>
       <Button text={t("button.bookAppointment")} onClick={openModal} />

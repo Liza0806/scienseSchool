@@ -71,12 +71,11 @@
 /* Фото и фон */
 .photoWrapper {
   margin: 0;
-  width: 35vw;
+  width: 40%;
   height: 85vh;
   padding: 2rem;
   padding-top: 4vh;
   color: light.$color-background;
-  font-size: 4.7rem;
   font-weight: 100;
   overflow: hidden;
   background: linear-gradient(
@@ -89,7 +88,9 @@
   background-size: 800% 800%;
   animation: gradient 15s ease infinite;
 }
-
+h3{
+   font-size: 4.7rem;
+}
 /* Текстовые блоки с анимацией */
 .droppingTexts {
   position: relative;
@@ -204,7 +205,7 @@
     font-size: 1500px;
     opacity: 0;
     margin-left: -1000px;
-    margin-top: 150px;
+    margin-top: 350px;
     z-index: 1;
   }
 
@@ -253,4 +254,10 @@
   h1 {
     font-size: 2.5rem;
   }
+}
+@media (max-width: 1330px) and (min-width: 1025px) {
+  h3 {
+    font-size: 3.3rem; 
+  }
+
 }

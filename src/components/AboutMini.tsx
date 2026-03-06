@@ -2,10 +2,12 @@ import { useTranslation } from "../hooks/useTranslation";
 import Button from "./Button";
 import cls from "./AboutMini.module.scss";
 import { useNavigate } from "react-router-dom";
+import { useModalContext } from "../context/ModalContext";
 
 const AboutMini = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+const { openModal } = useModalContext();
 
   const handleNavigate = () => {
     localStorage.setItem("scrollPosition", window.scrollY.toString());
@@ -23,7 +25,7 @@ const AboutMini = () => {
             <p>{t("aboutMini.paragraph3")}</p>
             <p>{t("aboutMini.paragraph4")}</p>
           </article>
-          <Button text={t("button.learnMore")} onClick={handleNavigate} />
+          <Button text={t("button.learnMore")} onClick={openModal} />
         </div>
       </div>
     </div>

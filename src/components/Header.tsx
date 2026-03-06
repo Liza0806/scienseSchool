@@ -21,7 +21,7 @@ export const Header = () => {
         <span></span>
         <span></span>
       </div>
-      <nav className={isMenuOpen ? cls.open : ""}>
+      {/* <nav className={isMenuOpen ? cls.open : ""}>
         <NavLink
           to="/"
           onClick={() => setIsMenuOpen(false)}
@@ -56,7 +56,7 @@ export const Header = () => {
         >
           {t("header.contacts")}
         </a>
-      </nav>
+      </nav> */}
       <div className={cls.languageSwitcher}>
         {["UA", "RU", "EN"].map((lang) => (
           <button

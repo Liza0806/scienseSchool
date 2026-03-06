@@ -1,5 +1,6 @@
 import styles from "./LearningFormatsSection.module.scss";
 import { useTheme } from "../context/ThemeContext";
+import { useModalContext } from "../context/ModalContext";
 
 interface Format {
   id: number;
@@ -35,6 +36,7 @@ const formats: Format[] = [
 
 export const LearningFormatsSection = () => {
   const { theme } = useTheme();
+const { openModal } = useModalContext();
 
   return (
     <section
@@ -56,7 +58,7 @@ export const LearningFormatsSection = () => {
               ))}
             </ul>
 
-            <button className={styles.button}>Записатися</button>
+            <button className={styles.button} onClick={openModal}>Записатися</button>
           </article>
         ))}
       </div>
