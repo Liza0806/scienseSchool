@@ -2,19 +2,26 @@
 @use "../styles/theme-dark" as dark;
 @use "../styles/fonts" as fonts;
 
+/* ================= HERO ================= */
+
 .heroWrapper {
   display: flex;
   justify-content: space-around;
 }
+
+/* ================= INFO ================= */
 
 .info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+
   gap: 1.8rem;
+
   flex: 1;
   height: 85vh;
+
   padding: 2rem;
 
   > div {
@@ -29,10 +36,14 @@
 .infoBottom {
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: space-between;
+
   height: 30vh;
 }
+
+/* ================= ABILITIES ================= */
 
 .abilities {
   display: flex;
@@ -40,16 +51,19 @@
   gap: 0.5rem;
 
   li {
-    padding-left: 0.7rem;
     position: relative;
+    padding-left: 0.7rem;
 
     &::before {
       content: "";
       position: absolute;
+
       left: 0;
       top: 0;
       bottom: 0;
+
       width: 4px;
+
       background-color: light.$color-primary;
 
       .dark & {
@@ -59,16 +73,22 @@
   }
 }
 
-/* Фото и фон */
+/* ================= PHOTO ================= */
+
 .photoWrapper {
   margin: 0;
+
   width: 40%;
   height: 85vh;
+
   padding: 2rem;
   padding-top: 4vh;
+
+  overflow: hidden;
+
   color: light.$color-background;
   font-weight: 100;
-  overflow: hidden;
+
   background: linear-gradient(
     270deg,
     light.$color-primary,
@@ -76,51 +96,70 @@
     light.$color-muted,
     light.$color-heading
   );
+
   background-size: 800% 800%;
+
   animation: gradient 15s ease infinite;
 }
+
 h3 {
   font-size: 4.7rem;
 }
-/* Текстовые блоки с анимацией */
+
+/* ================= DROPPING TEXT ================= */
+
 .droppingTexts {
   position: relative;
   display: inline-block;
+
   width: 180px;
-  text-align: left;
   height: 36px;
+
+  text-align: left;
+
   vertical-align: -2px;
 }
 
 .droppingTexts > div {
   position: absolute;
+
   top: -3rem;
   left: 0;
-  font-size: 0px;
+
+  font-size: 0;
   opacity: 0;
+
   margin-left: -30px;
+
   font-weight: 300;
   z-index: 0;
+
   will-change: transform, opacity;
 }
 
-/* Медленнее смена слов */
+/* animation timing */
+
 .droppingTexts > div:nth-child(1) {
   animation: roll 16s linear infinite 3s;
 }
+
 .droppingTexts > div:nth-child(2) {
   animation: roll 16s linear infinite 7s;
 }
+
 .droppingTexts > div:nth-child(3) {
   animation: roll 16s linear infinite 11s;
 }
+
 .droppingTexts > div:nth-child(4) {
   animation: roll2 16s linear infinite 15s;
 }
 
+/* ================= KEYFRAMES ================= */
+
 @keyframes roll {
   0% {
-    font-size: 0px;
+    font-size: 0;
     opacity: 0;
     margin-left: -30px;
     transform: rotate(-25deg);
@@ -149,7 +188,7 @@ h3 {
   }
 
   27% {
-    font-size: 0px;
+    font-size: 0;
     opacity: 0;
     margin-left: 20px;
     margin-top: 100px;
@@ -164,7 +203,7 @@ h3 {
 
 @keyframes roll2 {
   0% {
-    font-size: 0px;
+    font-size: 0;
     opacity: 0;
     margin-left: -30px;
     transform: rotate(-25deg);
@@ -205,120 +244,162 @@ h3 {
     z-index: 0;
   }
 }
-/* Градиент фона */
+
+/* ================= BACKGROUND ANIMATION ================= */
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
- .desktopBtn {
-       margin-top: auto;
-       padding: 2rem;
-  }
-/* Скрытие текста на планшете */
-@media (max-width: 1024px) {
+
+/* ================= MEDIA ================= */
+
+/* tablet */
+
+@media (max-width: 1023px) {
   .droppingTexts {
     display: none;
   }
+
   .desktopBtn {
-       display: none;
+    display: none;
+  }
+    .miniBtn {
+    display: block;
   }
 }
 
 @media (min-width: 1024px) {
-  .droppingTexts {
+  .miniBtn {
     display: none;
   }
-  .miniBtn {
-       display: none;
+   .desktopBtn {
+    display: block;
   }
 }
-/* Скрытие всего блока на телефоне */
+
+/* mobile */
+
 @media (max-width: 715px) {
   .photoWrapper {
     display: none;
   }
 }
 
+/* orientation */
+
 @media (min-width: 600px) and (orientation: portrait) {
   .headOne {
     font-size: 1.5em;
   }
 }
+
 @media (min-width: 600px) and (orientation: landscape) {
   .headOne {
     font-size: 1.5rem;
   }
+
   .info {
     height: 100%;
-   padding: 0 2rem;
+    padding: 0 2rem;
   }
-  .infoBottom{
-     gap: 1rem;
+
+  .infoBottom {
+    gap: 1rem;
   }
+
   section {
-    padding: 2rem 0;
+    padding: 0 0 2rem 0;
   }
 }
+
+/* small portrait */
+
 @media (min-width: 500px) and (max-width: 550px) and (orientation: portrait) {
   h2 {
     font-size: 0.5em;
   }
 }
+
 @media (min-width: 539px) and (max-width: 767px) and (orientation: portrait) {
   h2 {
     font-size: 1.5rem;
   }
 }
+
 @media (max-width: 767px) and (min-width: 450px) and (orientation: portrait) {
   .abilities {
     flex-direction: column;
   }
 }
 
+/* tablet portrait */
+
 @media (max-width: 1141px) and (orientation: portrait) {
   h1 {
     font-size: 3.5rem;
   }
 }
+
 @media (max-width: 1141px) and (orientation: landscape) {
   .photoWrapper {
     height: auto;
   }
 }
+
 @media (min-width: 767px) and (max-width: 1140px) and (orientation: portrait) {
-  .h2 {
-  font-size: 2rem;
+  h2 {
+    font-size: 2rem;
   }
 }
+
 @media (max-width: 843px) and (orientation: portrait) {
   h1 {
     font-size: 3rem;
   }
 }
+
+/* small phones */
+
 @media (max-width: 450px) and (orientation: portrait) {
   .info {
     height: 75vh;
   }
+
   h1 {
     font-size: 2.5rem;
   }
+
   h2 {
     font-size: 1.5rem;
   }
+
   .abilities {
     font-size: 1.1rem;
     flex-direction: row;
   }
 }
+
+/* desktop */
+
 @media (max-width: 1330px) and (min-width: 1025px) {
   h3 {
     font-size: 3.3rem;
   }
+}
+
+/* button */
+
+.desktopBtn {
+  margin-top: auto;
+  padding: 2rem;
 }

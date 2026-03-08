@@ -48,12 +48,12 @@ const Hero = () => {
               <li>{t("hero.ability.four")}</li>
             </ul>
           </div>
-        </div>
+      
         <div className={cls.desktopBtn}>
           <Button text={t("button.bookAppointment")} onClick={openModal} />
         </div>
       </div>
-
+  </div>
       <div className={cls.miniBtn}>
         <Button text={t("button.bookAppointment")} onClick={openModal} />
       </div>
