@@ -13,7 +13,7 @@ const Hero = () => {
   const { openModal } = useModalContext();
 
   return (
-    <div>
+    <section>
       <div className={cls.heroWrapper}>
         <div className={cls.photoWrapper}>
           <div className={cls.droppingTexts}>
@@ -49,9 +49,15 @@ const Hero = () => {
             </ul>
           </div>
         </div>
+        <div className={cls.desktopBtn}>
+          <Button text={t("button.bookAppointment")} onClick={openModal} />
+        </div>
       </div>
-      <Button text={t("button.bookAppointment")} onClick={openModal} />
-    </div>
+
+      <div className={cls.miniBtn}>
+        <Button text={t("button.bookAppointment")} onClick={openModal} />
+      </div>
+    </section>
   );
 };
 

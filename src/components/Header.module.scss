@@ -3,8 +3,9 @@
 @use "../styles/fonts" as fonts;
 
 .header {
-  width: 100%;
-  padding: 1rem 2rem;
+  width: 100vw;
+  height: 10vh;
+  padding: 2rem;
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -13,7 +14,7 @@
   justify-content: space-between;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
-:global(body.light) & {
+  :global(body.light) & {
     background-color: light.$color-surface;
   }
 
@@ -39,8 +40,8 @@
       transition: max-height 0.3s ease-in-out;
       z-index: 9999;
 
-     :global(body.light) & {
-    background-color: light.$color-surface;
+      :global(body.light) & {
+        background-color: light.$color-surface;
       }
 
       :global(body.dark) & {
@@ -82,7 +83,7 @@
     bottom: 0;
     left: 0;
 
-:global(body.light) & {
+    :global(body.light) & {
       background-color: light.$color-primary;
     }
 
@@ -96,7 +97,7 @@
   }
 
   &:hover {
-   :global(body.light) & {
+    :global(body.light) & {
       color: light.$color-primary;
     }
 
@@ -109,7 +110,7 @@
     color: white;
 
     &.active {
-   :global(body.light) & {
+      :global(body.light) & {
         color: light.$color-primary;
       }
       :global(body.dark) & {
@@ -140,7 +141,6 @@
 .languageSwitcher {
   display: flex;
   gap: 0.5rem;
- 
 
   button {
     background: transparent;
@@ -153,7 +153,7 @@
       color 0.3s ease,
       border-bottom 0.3s ease;
 
- :global(body.light) & {
+    :global(body.light) & {
       color: light.$color-text;
     }
 
@@ -162,10 +162,10 @@
     }
 
     &:hover {
-     :global(body.light) & {
+      :global(body.light) & {
         color: light.$color-primary;
       }
-     :global(body.dark) & {
+      :global(body.dark) & {
         color: dark.$dark-color-primary;
       }
     }
@@ -184,7 +184,6 @@
   }
 
   @media (max-width: 768px) {
-    position: absolute;
     top: 1rem;
     right: 3rem;
   }

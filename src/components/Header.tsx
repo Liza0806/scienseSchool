@@ -13,14 +13,14 @@ export const Header = () => {
 
   return (
     <div className={cls.header}>
-      <div
+      {/* <div
         className={`${cls.burger} ${isMenuOpen ? cls.open : ""}`}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </div> */}
       {/* <nav className={isMenuOpen ? cls.open : ""}>
         <NavLink
           to="/"
