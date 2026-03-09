@@ -1,42 +1,47 @@
 import styles from "./LearningFormatsSection.module.scss";
 import { useTheme } from "../context/ThemeContext";
 import { useModalContext } from "../context/ModalContext";
+import { useTranslation } from "../hooks/useTranslation";
+import { translations } from "../locales/translations";
+
+type TranslationKeys = keyof typeof translations.UA;
 
 interface Format {
   id: number;
-  title: string;
-  desc: string;
-  benefits: string[];
+  titleKey: TranslationKeys;
+  descKey: TranslationKeys;
+  benefitsKeys: TranslationKeys[];
 }
 
 const formats: Format[] = [
   {
     id: 1,
-    title: "Індивідуальне навчання",
-    desc: "Персональний підхід до кожного учня з урахуванням рівня знань та цілей.",
-    benefits: [
-      "Гнучкий графік занять",
-      "Програма під рівень учня",
-      "Максимум уваги від викладача",
-      "Швидший прогрес",
+    titleKey: "formats.individual.title",
+    descKey: "formats.individual.desc",
+    benefitsKeys: [
+      "formats.individual.benefit1",
+      "formats.individual.benefit2",
+      "formats.individual.benefit3",
+      "formats.individual.benefit4",
     ],
   },
   {
     id: 2,
-    title: "Навчання у групах",
-    desc: "Командна робота та підтримка однодумців у процесі навчання.",
-    benefits: [
-      "Мотивація та спілкування",
-      "Доступніша ціна",
-      "Дискусії та обмін ідеями",
-      "Структурована програма",
+    titleKey: "formats.group.title",
+    descKey: "formats.group.desc",
+    benefitsKeys: [
+      "formats.group.benefit1",
+      "formats.group.benefit2",
+      "formats.group.benefit3",
+      "formats.group.benefit4",
     ],
   },
 ];
 
 export const LearningFormatsSection = () => {
   const { theme } = useTheme();
-const { openModal } = useModalContext();
+  const { openModal } = useModalContext();
+  const { t } = useTranslation();
 
   return (
     <section
@@ -44,21 +49,23 @@ const { openModal } = useModalContext();
         theme === "dark" ? styles.dark : styles.light
       }`}
     >
-      <h2 className={styles.title}>Формати навчання</h2>
+      <h2 className={styles.title}>{t("formats.title")}</h2>
 
       <div className={styles.grid}>
         {formats.map((format) => (
           <article key={format.id} className={styles.card}>
-            <h3 className={styles.cardTitle}>{format.title}</h3>
-            <p className={styles.cardDesc}>{format.desc}</p>
+            <h3 className={styles.cardTitle}>{t(format.titleKey)}</h3>
+            <p className={styles.cardDesc}>{t(format.descKey)}</p>
 
             <ul className={styles.benefits}>
-              {format.benefits.map((item, index) => (
-                <li key={index}>{item}</li>
+              {format.benefitsKeys.map((key, index) => (
+                <li key={index}>{t(key)}</li>
               ))}
             </ul>
 
-            <button className={styles.button} onClick={openModal}>Записатися</button>
+            <button className={styles.button} onClick={openModal}>
+              {t("formats.button")}
+            </button>
           </article>
         ))}
       </div>

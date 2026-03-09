@@ -40,10 +40,10 @@ const WorkFormat = () => {
 
         <div className={`${cls.serviceCard} ${visible ? cls.visible : ""}`}>
           <h3>{t('workFormat.familyTitle')}</h3>
-          <p>{t('workFormat.familyDescription1')}</p>
-          <p>{t('workFormat.familyDescription2')}</p>
+          <p>{t('workFormat.groupDescription1')}</p>
+          <p>{t('workFormat.groupDescription2')}</p>
           <div className={cls.price}>
-            {t('workFormat.familyPrice')}
+            {t('workFormat.groupPrice')}
           </div>
         </div>
       </div>

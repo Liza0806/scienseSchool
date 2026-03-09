@@ -58,7 +58,7 @@ export const Header = () => {
         </a>
       </nav> */}
       <div className={cls.languageSwitcher}>
-        {["UA", "RU", "EN"].map((lang) => (
+        {["UA", "EN"].map((lang) => (
           <button
             key={lang}
             onClick={() => setLanguage(lang as "UA" | "RU" | "EN")}

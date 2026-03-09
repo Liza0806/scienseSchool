@@ -91,11 +91,10 @@ type TranslationKeys =
   | "workFormat.individualDescription"
   | "workFormat.individualPrice"
   | "workFormat.familyTitle"
-  | "workFormat.familyDescription1"
-  | "workFormat.familyDescription2"
-  | "workFormat.familyPrice"
+  | "workFormat.groupDescription1"
+  | "workFormat.groupDescription2"
+  | "workFormat.groupPrice"
   | "workFormat.button"
-  | "heroWords"
   | "errorTitle"
   | "errorMessage"
   | "backHome"
@@ -127,173 +126,261 @@ type TranslationKeys =
   | "modal.call"
   | "modal.close"
   | "modal.ask"
-  | "workSectionBottom";
+  | "workSectionBottom"
+  |"teachers.title"
+|"teachers.description"
+|"teachers.teacher1.name"
+|"teachers.teacher1.subjects"
+|"teachers.teacher1.bio"
+|"teachers.teacher2.name"
+|"teachers.teacher2.subjects"
+|"teachers.teacher2.bio"
+|"teachers.teacher3.name"
+|"teachers.teacher3.subjects"
+|"teachers.teacher3.bio"
+|"formats.title"
+|"formats.individual.title"
+|"formats.individual.desc"
+|"formats.individual.benefit1"
+|"formats.individual.benefit2"
+|"formats.individual.benefit3"
+|"formats.individual.benefit4"
+|"formats.group.title"
+|"formats.group.desc"
+|"formats.group.benefit1"
+|"formats.group.benefit2"
+|"formats.group.benefit3"
+|"formats.group.benefit4"
+|"formats.button"
+|"footerSubtitle"
+  ;
 
 type Translations = {
   [key in TranslationKeys]: string | Array<string>;
 };
-
 export const translations: Record<"UA" | "RU" | "EN", Translations> = {
   UA: {
     "aboutMini.title": "Наша школа — це більше, ніж підготовка до іспитів",
     "aboutMini.paragraph1":
-      "Наша онлайн школа природничих наук допомагає учням зрозуміти складні теми з біології, хімії та фізики просто й доступно",
+      "Ми — онлайн-школа природничих наук, де допомагаємо учням і студентам зрозуміти складні теми з біології, хімії та інших предметів просто й доступно.",
     "aboutMini.paragraph2":
-      "Ми готуємо до НМТ, вступних іспитів у коледжі та університети, а також підтримуємо учнів у навчанні протягом року. Наші викладачі — це фахівці з практичним досвідом та сучасним підходом до освіти.",
+      "Ми готуємо до НМТ, вступних іспитів у коледжі та університети, а також допомагаємо покращити успішність у школі чи університеті.",
     "aboutMini.paragraph3":
-      "Навчання відбувається у зручному онлайн-форматі індивідуально або в невеликих групах.",
+      "Наші викладачі — фахівці з практичним досвідом, які пояснюють складні теми зрозумілою мовою.",
     "aboutMini.paragraph4":
-      "Ми поєднуємо теорію з практичними завданнями та реальними прикладами з життя.",
+      "Навчання проходить у зручному онлайн-форматі: індивідуально або в невеликих групах.",
     "aboutMini.paragraph5":
-      "Наша мета — не просто підготувати до іспитів, а сформувати наукове мислення та впевненість у власних знаннях.",
+      "Наша мета — не лише підготувати до іспитів, а й сформувати впевненість у власних знаннях та інтерес до науки.",
+
     "button.learnMore": "Дізнатися більше",
-    "footer.copyright": "© {year} Карпич Владислав Сегрійович",
-    "footer.subtitle": "Лікар-психіатр, психотерапевт",
+
+    "footer.copyright": "© {year} Карпич Владислав Сергійович",
+    "footer.subtitle": "Онлайн-репетитори",
+
     "header.home": "Головна",
-    "header.about": "Про мене",
-    "header.WorkInfoSection": "Як ми будемо працювати",
+    "header.about": "Про нас",
+    "header.WorkInfoSection": "Як ми працюємо",
     "header.contacts": "Контакти",
-    "hero.schoolTitle": "Онлайн школа природничих наук",
+
+    "hero.schoolTitle": "Онлайн-школа природничих наук",
     "hero.subtitle":
-      "Навчаємо розуміти науку, а не просто запам’ятовувати факти",
-    "hero.ability.one": "НМТ",
-    "hero.ability.two": "КРОК",
-    "hero.ability.three": "КРОК2",
-    "hero.ability.four": "ХЗ",
-    "button.bookAppointment": "Записатися на пробне зайняття",
-    "meta.title": "підготовка до НМТ та вступу",
+      "Допомагаємо зрозуміти науку, а не просто запам’ятовувати факти",
+
+    "hero.ability.one": "Підготовка до НМТ",
+    "hero.ability.two": "Підготовка до КРОК",
+    "hero.ability.three": "Підготовка до вступу",
+    "hero.ability.four": "Поглиблене вивчення предметів",
+
+    "button.bookAppointment": "Записатися на пробне заняття",
+
+    "meta.title": "Онлайн-репетитори: підготовка до НМТ та вступу",
     "meta.description":
-      "підготовка до НМТ та вступу, онлайн школа, КРОК, НМТ, біологія, химія, фізіологія",
+      "Онлайн-репетитори з біології, хімії, математики та медичних дисциплін. Підготовка до НМТ, КРОК та вступних іспитів.",
+
     "servicesList.title": "Наші курси",
-    "servicesList.courseOne": "Хімия",
+
+    "servicesList.courseOne": "Хімія",
     "servicesList.courseTwo": "Біологія",
     "servicesList.courseThree": "Математика",
     "servicesList.courseFour": "Фізіологія",
     "servicesList.courseFive": "Гістологія",
-    "servicesList.courseSix": "Латінська мова",
-    "servicesList.button": "Дізнатись курси",
-    "servicesList.courseOne.item1": "химия такая",
-    "servicesList.courseOne.item2": "химия сякая",
-    "servicesList.courseOne.item3": "и к нмт и для себя",
-    "servicesList.courseOne.item4": "Вах, какая песня",
-    "servicesList.courseTwo.item1": "Біологія такая",
-    "servicesList.courseTwo.item2": "Біологія сякая",
-    "servicesList.courseTwo.item3": "и к нмт и для себя",
-    "servicesList.courseTwo.item4": "Вах, какая песня",
-    "servicesList.courseThree.item1": "Математика такая",
-    "servicesList.courseThree.item2": "Математика сякая",
-    "servicesList.courseThree.item3": "и к нмт и для себя",
-    "servicesList.courseThree.item4": "Вах, какая песня",
-    "servicesList.courseFour.item1": "Фізіологія такая",
-    "servicesList.courseFour.item2": "Фізіологія сякая",
-    "servicesList.courseFour.item3": "и к нмт и для себя",
-    "servicesList.courseFour.item4": "Вах, какая песня",
-    "servicesList.courseFive.item1": "Гістологія такая",
-    "servicesList.courseFive.item2": "Гістологія сякая",
-    "servicesList.courseFive.item3": "и к нмт и для себя",
-    "servicesList.courseFive.item4": "Вах, какая песня",
-    "servicesList.courseSix.item1": "Латінська мова такая",
-    "servicesList.courseSix.item2": "Латінська мова сякая",
-    "servicesList.courseSix.item3": "и к нмт и для себя",
-    "servicesList.courseSix.item4": "Вах, какая песня",
+    "servicesList.courseSix": "Латинська мова",
+
+    "servicesList.button": "Дізнатись більше",
+
+    "servicesList.courseOne.item1": "Підготовка до НМТ з хімії",
+    "servicesList.courseOne.item2": "Пояснення складних тем простими словами",
+    "servicesList.courseOne.item3": "Розбір тестових завдань",
+    "servicesList.courseOne.item4": "Системне розуміння предмета",
+
+    "servicesList.courseTwo.item1": "Підготовка до НМТ з біології",
+    "servicesList.courseTwo.item2": "Розбір складних тем",
+    "servicesList.courseTwo.item3": "Практичні завдання та тести",
+    "servicesList.courseTwo.item4": "Підготовка до вступу",
+
+    "servicesList.courseThree.item1": "Пояснення шкільної програми",
+    "servicesList.courseThree.item2": "Підготовка до контрольних та іспитів",
+    "servicesList.courseThree.item3": "Розвиток логічного мислення",
+    "servicesList.courseThree.item4": "Індивідуальний підхід",
+
+    "servicesList.courseFour.item1": "Поглиблене вивчення фізіології",
+    "servicesList.courseFour.item2": "Допомога студентам медичних спеціальностей",
+    "servicesList.courseFour.item3": "Пояснення складних процесів організму",
+    "servicesList.courseFour.item4": "Підготовка до іспитів",
+
+    "servicesList.courseFive.item1": "Вивчення тканин організму",
+    "servicesList.courseFive.item2": "Пояснення складних тем",
+    "servicesList.courseFive.item3": "Підготовка до медичних іспитів",
+    "servicesList.courseFive.item4": "Практичні завдання та тести",
+
+    "servicesList.courseSix.item1": "Основи медичної латини",
+    "servicesList.courseSix.item2": "Медична термінологія",
+    "servicesList.courseSix.item3": "Підготовка до заліків та іспитів",
+    "servicesList.courseSix.item4": "Зручні пояснення та приклади",
+
     "workFormat.title": "Формат нашої роботи",
+
     "workFormat.paragraph1":
-      "Мы короче очень хорошо работаем уже много лет подряд, нам не страшкодоверить детей, взрослых и домашних животных. Ясен пень, что мы профессионалы и вообще красавчики",
+      "Ми допомагаємо учням та студентам зрозуміти складні теми з природничих наук і підготуватися до важливих іспитів.",
+
     "workFormat.paragraph2":
-      "Онлайн-уроки здійснюються через Skype, Zoom, Viber, Whatsapp, Telegram, FaceTime. Онлайн-уроки є такімі ж ефективними, як і особисті зустрічі.",
-    "workFormat.individualTitle": "workFormat.individualTitle",
-    "workFormat.advantages": "Наши преимущества",
-    "workFormat.advantageOne": "У нас есть свои уникальные учебные планы.",
-    "workFormat.advantageTwo":
-      "Методические материалы подобраны под каждый предмет",
-    "workFormat.advantageThree": "Есть база тестов",
-    "workFormat.advantageFour": "Индивидуальній подход, яхз",
+      "Заняття проходять онлайн у зручний для вас час через популярні платформи відеозв'язку. Такий формат дозволяє навчатися з будь-якого місця.",
+
+    "workFormat.individualTitle": "Індивідуальні заняття",
+
     "workFormat.individualDescription":
-      "Психологічна консультація та психотерапія онлайн.",
-    "workFormat.individualPrice": "1000 ₴ — 50 хвилин",
-    "workFormat.familyTitle": "Сімейне консультування",
-    "workFormat.familyDescription1":
-      "Сімейне консультування та психотерапія пар спрямовані на корекцію стосунків та усунення емоційних труднощів у родині.",
-    "workFormat.familyDescription2":
-      "Робота ведеться з усіма членами родини, які відчувають труднощі в спілкуванні. Найчастіше пари звертаються для відновлення, реабілітації та оновлення стосунків.",
-    "workFormat.familyPrice": "1300 ₴ — 75 хвилин",
-    "workFormat.button": "Записатися на консультацію",
-    errorTitle: "Щось пішло не так...",
-    errorMessage:
-      "Вибачте, сталася помилка. Будь ласка, спробуйте перезавантажити сторінку або поверніться на головну.",
-    backHome: "Повернутись на головну",
-    titleNotFound: "404",
-    descriptionNotFound:
-      "Інколи нам важко знайти навіть себе. Що вже казати про цю сторінку?..",
-    homeButtonNotFound: "Повернутися на головну",
-    backButtonNotFound: "Назад",
-    metaTitleNotFound: "404 — Сторінка не знайдена",
-    metaDescriptionNotFound: "Вибачте, запитувана сторінка не існує.",
-    chargingTheDayForSuccess: "Заряджаємо день на успіх...",
-    workStartTitle: "Як ми почнемо працювати?",
-    workStartDescription:
-      "Наше знайомство завжди починається з попереднього запису. Ви можете написати мені повідомлення або залишити заявку на сайті — ми підберемо зручний для вас час.\n\nНа першій консультації ми спокійно обговоримо, що привело вас до мене. Неважливо, чи є у вас готова тема для розмови, чи просто є відчуття, що «щось не так» — моя задача допомогти розібратись.\n\nПерша зустріч триває 50 хвилин.",
-    workFormatsTitle: "Як проходять консультації?",
-    workFormatsDescription:
-      "Існує два формати роботи:\n\nКороткострокові консультації (5-10 зустрічей) — якщо ви хочете вирішити конкретне питання або ситуацію.\n\nДовготривала терапія (від 10 зустрічей) — якщо важливо глибше пропрацювати внутрішні причини, змінити звичні сценарії та стосунки.\n\nРазом ми визначимо, який шлях підійде саме вам.",
-    workOrganizationalTitle: "Кілька організаційних моментів",
-    workOrganizationalDescription:
-      "Щоб наша співпраця була комфортною:\n\nКонсультація триває 50 хвилин.\nРекомендована частота зустрічей — 1 раз на тиждень.\nОнлайн-сесії проходять по передоплаті.\n\nЯкщо не виходить прийти — прошу попередити не пізніше, ніж за 24 години. Інакше, сесія вважається проведеною.\n\nЯкщо ви запізнюєтесь — ми працюємо залишений час.\n\nВажливо: я не даю порад «як правильно жити». Замість цього — допомагаю вам почути себе і прийняти власні рішення.",
-    workSimpleTitle: "Простими словами",
-    workSimpleDescription:
-      "Ви можете прийти до мене, навіть якщо не знаєте, з чого почати.\nВаше завдання — просто прийти, моє — допомогти вам знайти відповіді.",
-    footerContactTitle: "Контактна інформація:",
-    footerSubtitle: "Психологічна допомога онлайн",
+      "Індивідуальний формат дозволяє зосередитися саме на ваших потребах та темпі навчання.",
+
+    "workFormat.individualPrice": "Вартість уточнюється",
+
+    "workFormat.familyTitle": "Групові заняття",
+
+    "workFormat.groupDescription1":
+      "Невеликі групи дозволяють поєднати індивідуальну увагу викладача та активне обговорення матеріалу.",
+
+    "workFormat.groupDescription2":
+      "Такий формат підходить учням, яким комфортно навчатися разом з іншими.",
+
+    "workFormat.groupPrice": "Вартість уточнюється",
+
+    "workFormat.advantages": "Наші переваги",
+
+    "workFormat.advantageOne": "Авторські навчальні програми",
+    "workFormat.advantageTwo": "Сучасні методики викладання",
+    "workFormat.advantageThree": "Велика база тестів",
+    "workFormat.advantageFour": "Індивідуальний підхід",
+
+    "workFormat.button": "Записатися на заняття",
+
+    "errorTitle": "Щось пішло не так...",
+    "errorMessage":
+      "Вибачте, сталася помилка. Спробуйте перезавантажити сторінку або поверніться на головну.",
+    "backHome": "Повернутись на головну",
+
+    "titleNotFound": "404",
+    "descriptionNotFound": "Сторінку не знайдено.",
+    "homeButtonNotFound": "На головну",
+    "backButtonNotFound": "Назад",
+
+    "metaTitleNotFound": "404 — Сторінка не знайдена",
+    "metaDescriptionNotFound": "Запитувана сторінка не існує.",
+
+    "chargingTheDayForSuccess": "Готуємо новий день для успіху...",
+
+    "workStartTitle": "Як починається навчання?",
+    "workStartDescription":
+      "Після запису ми проводимо коротку консультацію та визначаємо рівень знань учня. Разом формуємо індивідуальний план навчання.",
+
+    "workFormatsTitle": "Як проходять заняття?",
+    "workFormatsDescription":
+      "Можливі індивідуальні або групові заняття. Формат підбирається залежно від цілей та рівня підготовки.",
+
+    "workOrganizationalTitle": "Організаційні моменти",
+    "workOrganizationalDescription":
+      "Тривалість заняття — приблизно 50–60 хвилин. Рекомендована частота — 1–2 рази на тиждень.",
+
+    "workSimpleTitle": "Простими словами",
+    "workSimpleDescription":
+      "Ваше завдання — прийти на заняття. Наше — допомогти вам зрозуміти матеріал.",
+
+    "footerContactTitle": "Контактна інформація:",
+
     "modal.call": "Зателефонувати",
     "modal.close": "Закрити",
     "modal.ask": "Як вам зручніше записатися?",
-    workSectionBottom: "Ваше місце сили",
 
-    heroWords: [
-      "Натхнення",
-      "Впевненість",
-      "Сила",
-      "Спокій",
-      "Гармонія",
-      "Цілі",
-      "Рівновага",
-      "Самопізнання",
-      "Підтримка",
-      "Розвиток",
-      "Досягнення",
-      "Усвідомленість",
-      "Довіра",
-      "Самооцінка",
-      "Мудрість",
-    ],
+    "workSectionBottom": "Разом ми досягнемо результату",
+
+
+
+    "teachers.title": "Наші викладачі",
+
+"teachers.description":
+"У нашій школі працюють викладачі з реальним досвідом підготовки до НМТ, вступних іспитів та медичних тестів. Ми не просто пояснюємо матеріал — ми допомагаємо зрозуміти логіку науки та навчитися мислити самостійно.",
+
+"teachers.teacher1.name": "Олена Коваль",
+"teachers.teacher1.subjects": "Біологія, Хімія",
+"teachers.teacher1.bio":
+"Викладач із понад 10-річним досвідом підготовки до НМТ та вступних іспитів. Допомагаю учням систематизувати знання та впевнено складати іспити.",
+
+"teachers.teacher2.name": "Ігор Мельник",
+"teachers.teacher2.subjects": "Фізика, Математика",
+"teachers.teacher2.bio":
+"Пояснюю складні теми просто та зрозуміло. Використовую приклади з реального життя, щоб показати практичне застосування науки.",
+
+"teachers.teacher3.name": "Марія Шевченко",
+"teachers.teacher3.subjects": "Хімія, Біологія",
+"teachers.teacher3.bio":
+"Допомагаю учням полюбити природничі науки та зрозуміти логіку предметів. Моя мета — зробити навчання цікавим і результативним.",
+"footerSubtitle": "Репетитор онлайн",
+
+
+
+
+"formats.title": "Формати навчання",
+
+"formats.individual.title": "Індивідуальне навчання",
+"formats.individual.desc":
+"Персональний формат занять, де вся увага викладача зосереджена на одному учневі. Програма підбирається відповідно до рівня знань, темпу навчання та цілей.",
+
+"formats.individual.benefit1": "Гнучкий графік занять",
+"formats.individual.benefit2": "Програма під рівень учня",
+"formats.individual.benefit3": "Максимум уваги від викладача",
+"formats.individual.benefit4": "Швидший прогрес у навчанні",
+
+"formats.group.title": "Навчання у групах",
+"formats.group.desc":
+"Групові заняття проходять у невеликих командах учнів зі схожим рівнем підготовки. Це дозволяє поєднати ефективне навчання з підтримкою однодумців.",
+
+"formats.group.benefit1": "Мотивація та підтримка однодумців",
+"formats.group.benefit2": "Доступніша вартість занять",
+"formats.group.benefit3": "Обговорення та дискусії",
+"formats.group.benefit4": "Структурована навчальна програма",
+
+"formats.button": "Записатися",
+
   },
-  RU: {
-    "aboutMini.title": "Наша школа — це більше, ніж підготовка до іспитів",
-    "aboutMini.paragraph1":
-      "Наша онлайн школа природничих наук допомагає учням зрозуміти складні теми з біології, хімії та фізики просто й доступно",
-    "aboutMini.paragraph2":
-      "Ми готуємо до НМТ, вступних іспитів у коледжі та університети, а також підтримуємо учнів у навчанні протягом року. Наші викладачі — це фахівці з практичним досвідом та сучасним підходом до освіти.",
-    "aboutMini.paragraph3":
-      "Навчання відбувається у зручному онлайн-форматі індивідуально або в невеликих групах.",
-    "aboutMini.paragraph4":
-      "Ми поєднуємо теорію з практичними завданнями та реальними прикладами з життя.",
-    "aboutMini.paragraph5":
-      "Наша мета — не просто підготувати до іспитів, а сформувати наукове мислення та впевненість у власних знаннях.",
-    "button.learnMore": "Дізнатися більше",
+
+  RU: {   "aboutMini.title": "Наша школа — это больше, чем подготовка к экзаменам",
+    "aboutMini.paragraph1": "Мы — онлайн-школа естественных наук, где помогаем студентам и школьникам легко понимать биологию, химию и другие предметы.",
+    "aboutMini.paragraph2": "Готовим к НМТ, вступительным экзаменам и помогаем повышать успеваемость.",
+    "aboutMini.paragraph3": "Наши преподаватели — эксперты с практическим опытом, объясняют материал простым языком.",
+    "aboutMini.paragraph4": "Обучение проходит онлайн: индивидуально или в небольших группах.",
+    "aboutMini.paragraph5": "Наша цель — не только подготовить к экзаменам, но и развить уверенность в знаниях и интерес к науке.",
+    "button.learnMore": "Узнать больше",
     "footer.copyright": "© {year} Карпич Владислав Сергійович",
-    "footer.subtitle": "Врач-психиатр, психотерапевт",
+    "footer.subtitle": "Онлайн репетиторы",
     "header.home": "Главная",
-    "header.about": "Обо мне",
-    "header.WorkInfoSection": "Как мы будем работать",
+    "header.about": "О нас",
+    "header.WorkInfoSection": "Как мы работаем",
     "header.contacts": "Контакты",
     "hero.schoolTitle": "Онлайн школа естественных наук",
-    "hero.subtitle":
-      "Навчаємо розуміти науку, а не просто запам’ятовувати факти",
-    "hero.ability.one": "НМТ",
-    "hero.ability.two": "КРОК",
-    "hero.ability.three": "КРОК2",
-    "hero.ability.four": "ХЗ",
-    "button.bookAppointment": "Записатися на пробне зайняття",
+    "hero.subtitle": "Помогаем понять науку, а не просто заучивать факты",
+    "hero.ability.one": "Подготовка к НМТ",
+    "hero.ability.two": "Подготовка к КРОК",
+    "hero.ability.three": "Вступительные экзамены",
+    "hero.ability.four": "Углублённое изучение предметов",
+    "button.bookAppointment": "Записаться на пробное занятие",
     "meta.title": "підготовка до НМТ та вступу",
     "meta.description":
       "підготовка до НМТ та вступу, онлайн школа, КРОК, НМТ, біологія, химія, фізіологія",
@@ -344,11 +431,11 @@ export const translations: Record<"UA" | "RU" | "EN", Translations> = {
     "workFormat.advantageFour": "Индивидуальній подход, яхз",
     "workFormat.individualPrice": "Записывайтесь на пробный урок",
     "workFormat.familyTitle": "Семейное консультирование",
-    "workFormat.familyDescription1":
+    "workFormat.groupDescription1":
       "Семейное консультирование и психотерапия пар направлены на коррекцию отношений и устранение эмоциональных трудностей в семье.",
-    "workFormat.familyDescription2":
+    "workFormat.groupDescription2":
       "Работа ведётся со всеми членами семьи, которые испытывают трудности в общении. Чаще всего пары приходят для восстановления, реабилитации и обновления отношений.",
-    "workFormat.familyPrice": "1300 ₴ — 75 минут",
+    "workFormat.groupPrice": "1300 ₴ — 75 минут",
     "workFormat.button": "Записаться на консультацию",
     "errorTitle": "Что-то пошло не так...",
     "errorMessage":
@@ -375,57 +462,67 @@ export const translations: Record<"UA" | "RU" | "EN", Translations> = {
     "workSimpleDescription":
       "Вы можете прийти ко мне, даже если не знаете, с чего начать.\nВаша задача — просто прийти, моя — помочь вам найти ответы.",
     "footerContactTitle": "Контактная информация:",
-    "footerSubtitle": "Психологеская помощь онлайн",
+    "footerSubtitle": "Репетитор онлайн",
     "modal.call": "Позвонить",
     "modal.close": "Закрыть",
     "modal.ask": "Как вам удобнее записаться?",
     "workSectionBottom": "Ваше место силы",
+     "teachers.title": "Наши преподаватели",
+  "teachers.description":
+    "В нашей школе работают преподаватели с реальным опытом подготовки к НМТ, вступительным экзаменам и медицинским тестам. Мы не просто объясняем материал — мы помогаем понять логику науки и научиться мыслить самостоятельно.",
+  "teachers.teacher1.name": "Олена Коваль",
+  "teachers.teacher1.subjects": "Биология, Химия",
+  "teachers.teacher1.bio":
+    "Преподаватель с более чем 10-летним опытом подготовки к НМТ и вступительным экзаменам. Помогаю ученикам систематизировать знания и уверенно сдавать экзамены.",
+  "teachers.teacher2.name": "Игорь Мельник",
+  "teachers.teacher2.subjects": "Физика, Математика",
+  "teachers.teacher2.bio":
+    "Объясняю сложные темы просто и понятно. Использую примеры из реальной жизни, чтобы показать практическое применение науки.",
+  "teachers.teacher3.name": "Мария Шевченко",
+  "teachers.teacher3.subjects": "Химия, Биология",
+  "teachers.teacher3.bio":
+    "Помогаю ученикам полюбить естественные науки и понять логику предметов. Моя цель — сделать обучение интересным и результативным.",
 
-    "heroWords": [
-      "Вдохновение",
-      "Уверенность",
-      "Сила",
-      "Спокойствие",
-      "Гармония",
-      "Цели",
-      "Равновесие",
-      "Самопознание",
-      "Поддержка",
-      "Развитие",
-      "Достижения",
-      "Осознанность",
-      "Доверие",
-      "Самооценка",
-      "Мудрость",
-    ],
+  "formats.title": "Форматы обучения",
+  "formats.individual.title": "Индивидуальное обучение",
+  "formats.individual.desc":
+    "Персональный формат занятий, где всё внимание преподавателя сосредоточено на одном ученике. Программа подбирается в соответствии с уровнем знаний, темпом обучения и целями.",
+  "formats.individual.benefit1": "Гибкий график занятий",
+  "formats.individual.benefit2": "Программа под уровень ученика",
+  "formats.individual.benefit3": "Максимум внимания от преподавателя",
+  "formats.individual.benefit4": "Более быстрый прогресс в обучении",
+
+  "formats.group.title": "Обучение в группах",
+  "formats.group.desc":
+    "Групповые занятия проходят в небольших командах учеников с похожим уровнем подготовки. Это позволяет сочетать эффективное обучение с поддержкой единомышленников.",
+  "formats.group.benefit1": "Мотивация и поддержка единомышленников",
+  "formats.group.benefit2": "Более доступная стоимость занятий",
+  "formats.group.benefit3": "Обсуждения и дискуссии",
+  "formats.group.benefit4": "Структурированная учебная программа",
+
+  "formats.button": "Записаться"
   },
   EN: {
-    "aboutMini.title": "Наша школа — це більше, ніж підготовка до іспитів",
-    "aboutMini.paragraph1":
-      "Наша онлайн школа природничих наук допомагає учням зрозуміти складні теми з біології, хімії та фізики просто й доступно",
-    "aboutMini.paragraph2":
-      "Ми готуємо до НМТ, вступних іспитів у коледжі та університети, а також підтримуємо учнів у навчанні протягом року. Наші викладачі — це фахівці з практичним досвідом та сучасним підходом до освіти.",
-    "aboutMini.paragraph3":
-      "Навчання відбувається у зручному онлайн-форматі індивідуально або в невеликих групах.",
-    "aboutMini.paragraph4":
-      "Ми поєднуємо теорію з практичними завданнями та реальними прикладами з життя.",
-    "aboutMini.paragraph5":
-      "Наша мета — не просто підготувати до іспитів, а сформувати наукове мислення та впевненість у власних знаннях.",
-    "button.learnMore": "Дізнатися більше",
+    "aboutMini.title": "Our school is more than exam preparation",
+    "aboutMini.paragraph1": "We are an online school of natural sciences helping students easily understand biology, chemistry, and other subjects.",
+    "aboutMini.paragraph2": "We prepare students for entrance exams and help improve school performance.",
+    "aboutMini.paragraph3": "Our teachers are experts with practical experience, explaining complex topics clearly.",
+    "aboutMini.paragraph4": "Lessons are held online: individually or in small groups.",
+    "aboutMini.paragraph5": "Our goal is not only to prepare for exams but to build confidence in knowledge and interest in science.",
+    "button.learnMore": "Learn More",
     "footer.copyright": "© {year} Borysenko Volodymyr Vasylovych",
-    "footer.subtitle": "Psychiatrist, Psychotherapist",
+    "footer.subtitle": "Online tutors",
     "header.home": "Home",
-    "header.about": "About me",
-    "header.WorkInfoSection": "How we will work",
+    "header.about": "About us",
+    "header.WorkInfoSection": "How we work",
     "header.contacts": "Contacts",
     "hero.schoolTitle": "Online School of Natural Sciences",
-    "hero.subtitle":
-      "We teach you to understand science, not just memorize facts",
-    "hero.ability.one": "NMT",
-    "hero.ability.two": "KROK",
-    "hero.ability.three": "KROC2",
-    "hero.ability.four": "HZ",
-    "button.bookAppointment": "Записатися на пробне зайняття",
+    "hero.subtitle": "We teach understanding science, not just memorizing facts",
+    "hero.ability.one": "NMT Preparation",
+    "hero.ability.two": "KROK Preparation",
+    "hero.ability.three": "Entrance Exams",
+    "hero.ability.four": "Advanced Subject Study",
+    "button.bookAppointment": "Book a trial lesson",
     "meta.title": "Онлайн школа природничих наук",
     "meta.description":
       "підготовка до НМТ та вступу, онлайн школа, КРОК, НМТ, біологія, химія, фізіологія",
@@ -476,11 +573,11 @@ export const translations: Record<"UA" | "RU" | "EN", Translations> = {
     "workFormat.advantageFour": "Индивидуальній подход, яхз",
     "workFormat.individualPrice": "1000 ₴ — 50 minutes",
     "workFormat.familyTitle": "Family Counseling",
-    "workFormat.familyDescription1":
+    "workFormat.groupDescription1":
       "Family counseling and couples therapy aimed at correcting relationships and resolving emotional difficulties within the family.",
-    "workFormat.familyDescription2":
+    "workFormat.groupDescription2":
       "Work is carried out with all family members who experience communication difficulties. Most often, couples come for restoration, rehabilitation, and relationship renewal.",
-    "workFormat.familyPrice": "1300 ₴ — 75 minutes",
+    "workFormat.groupPrice": "1300 ₴ — 75 minutes",
     "workFormat.button": "Book an appointment",
     "errorTitle": "Something went wrong...",
     "errorMessage":
@@ -507,29 +604,45 @@ export const translations: Record<"UA" | "RU" | "EN", Translations> = {
     "workSimpleDescription":
       "You can come to me even if you don’t know where to start.\nYour task is simply to come, and mine — to help you find the answers.",
     "footerContactTitle": "Contact Information:",
-    "footerSubtitle": "Online Psychological Support",
+    "footerSubtitle": "",
     "modal.ask": "How would you prefer to book an appointment?",
     "modal.call": "Call",
     "modal.close": "Close window",
     "workSectionBottom": "Your place of power",
+     "teachers.title": "Our Teachers",
+  "teachers.description":
+    "Our school employs teachers with real experience preparing students for NMT, entrance exams, and medical tests. We don't just explain the material — we help students understand the logic of science and learn to think independently.",
+  "teachers.teacher1.name": "Olena Koval",
+  "teachers.teacher1.subjects": "Biology, Chemistry",
+  "teachers.teacher1.bio":
+    "A teacher with over 10 years of experience preparing students for NMT and entrance exams. I help students organize their knowledge and confidently pass exams.",
+  "teachers.teacher2.name": "Ihor Melnyk",
+  "teachers.teacher2.subjects": "Physics, Mathematics",
+  "teachers.teacher2.bio":
+    "I explain complex topics simply and clearly. I use real-life examples to show the practical application of science.",
+  "teachers.teacher3.name": "Maria Shevchenko",
+  "teachers.teacher3.subjects": "Chemistry, Biology",
+  "teachers.teacher3.bio":
+    "I help students fall in love with natural sciences and understand the logic of subjects. My goal is to make learning interesting and effective.",
 
-    "heroWords": [
-      "Inspiration",
-      "Confidence",
-      "Strength",
-      "Calmness",
-      "Harmony",
-      "Goals",
-      "Balance",
-      "Self-discovery",
-      "Support",
-      "Growth",
-      "Achievements",
-      "Awareness",
-      "Trust",
-      "Self-esteem",
-      "Wisdom",
-    ],
+  "formats.title": "Learning Formats",
+  "formats.individual.title": "Individual Learning",
+  "formats.individual.desc":
+    "A personal format where the teacher's full attention is focused on one student. The program is tailored according to the student's knowledge level, learning pace, and goals.",
+  "formats.individual.benefit1": "Flexible schedule",
+  "formats.individual.benefit2": "Program tailored to student level",
+  "formats.individual.benefit3": "Maximum attention from the teacher",
+  "formats.individual.benefit4": "Faster progress in learning",
+
+  "formats.group.title": "Group Learning",
+  "formats.group.desc":
+    "Group lessons take place in small teams of students with similar preparation levels. This allows combining effective learning with peer support.",
+  "formats.group.benefit1": "Motivation and support from peers",
+  "formats.group.benefit2": "More affordable tuition",
+  "formats.group.benefit3": "Discussions and debates",
+  "formats.group.benefit4": "Structured curriculum",
+
+  "formats.button": "Sign Up"
   },
 };
 
