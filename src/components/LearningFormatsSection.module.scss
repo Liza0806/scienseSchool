@@ -3,9 +3,7 @@
 @use "../styles/fonts" as fonts;
 
 .formats {
-  padding: 4rem 2rem;
-  border-radius: 2rem;
-
+overflow: hidden;
   &.light {
     background-color: light.$color-background;
     color: light.$color-text;

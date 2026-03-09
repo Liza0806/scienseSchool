@@ -55,7 +55,7 @@ export const TeachersSection = () => {
               <h3 className={cls.name}>{teacher.name}</h3>
               <span className={cls.subjects}>{teacher.subjects}</span>
               <p className={cls.bio}>{teacher.bio}</p>
-              <button className={cls.button}>Детальніше</button>
+              {/* <button className={cls.button}>Детальніше</button> */}
             </div>
           </article>
         ))}

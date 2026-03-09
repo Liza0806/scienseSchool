@@ -14,10 +14,9 @@
 }
 
 .wrapper {
-  padding: 2rem 2rem;
-  border-radius: 2rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  margin: 2rem 0;
   text-align: center;
 
   body.light & {
