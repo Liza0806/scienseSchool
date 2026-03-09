@@ -52,8 +52,8 @@
 
 /* IMAGE */
 .photoWrapper {
-    width: 30rem;
-    height: 30rem;
+  width: 30rem;
+  height: 30rem;
   overflow: hidden;
   background-color: light.$color-accent-light;
   border-radius: 50%;
@@ -79,19 +79,19 @@
 
 .name {
   font-family: fonts.$font-family-heading;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: light.$color-primary;
   margin-bottom: 0.5rem;
 }
 
 .subjects {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   color: light.$color-muted;
   margin-bottom: 1rem;
 }
 
 .bio {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: light.$color-text;
   line-height: 1.5;
   flex-grow: 1;

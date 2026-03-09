@@ -49,26 +49,25 @@
 
 // ==================================================
 // 🌙 Backgrounds
-$dark-color-background: #1A1F1D;
-$dark-color-surface:    #242B28;
+// 🌑 Backgrounds (neutral gray, no green tint)
+$dark-color-background: #181A1B;
+$dark-color-surface:    #222426;
 
-// 🌱 Brand colors
-$dark-color-primary:    #6FAF98;
-$dark-color-secondary:  #A3B18A;
+// 🌱 Brand colors (buttons / primary UI)
+$dark-color-primary:    #3FA37F;
+$dark-color-primary-dark:#2F8A69;
+$dark-color-secondary:  #4F9F86;
 
 // 📝 Text
-$dark-color-heading:    #E6EFEA;
-$dark-color-text:       #C7D4CE;
-$dark-color-muted:      #8FA39A;
+$dark-color-heading:    #F1F3F4;
+$dark-color-text:       #D0D4D6;
+$dark-color-muted:      #8C9396;
 
 // 🎨 UI accents
-$dark-color-accent-light: #2F3B36;
-$dark-color-border:       #3E4F48;
+$dark-color-accent-light: #2B2E30;
+$dark-color-border:       #3A3D40;
 
 // ⚠️ States
 $dark-color-error:        #E57373;
-$dark-color-success:      #7FBF9F;
+$dark-color-success:      #4FBF91;
 $dark-color-warning:      #D6B86A;
-
-// Hover
-$dark-color-primary-dark: #5A9C84;

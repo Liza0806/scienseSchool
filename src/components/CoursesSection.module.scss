@@ -48,7 +48,7 @@
         border-radius: 0.5rem;
 
         :global(body.dark) & {
-          background-color: dark.$dark-color-background;
+          background-color: dark.$dark-color-accent-light;
           color: dark.$dark-color-text;
         }
       }
