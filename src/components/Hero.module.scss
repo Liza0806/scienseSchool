@@ -16,7 +16,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
+  text-align: center;
   gap: 1.8rem;
 
   flex: 1;
@@ -31,12 +31,14 @@
 
 .headOne {
   font-size: 0.8em;
+  display: flex;
+  text-align: center;
 }
 
 .infoBottom {
   display: flex;
   flex-direction: column;
-
+  text-align: center;
   align-items: center;
   justify-content: space-between;
 
@@ -49,7 +51,7 @@
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
-
+  text-align: center;
   li {
     position: relative;
     padding-left: 0.7rem;
@@ -273,7 +275,7 @@ h3 {
   .desktopBtn {
     display: none;
   }
-    .miniBtn {
+  .miniBtn {
     display: block;
   }
 }
@@ -282,7 +284,7 @@ h3 {
   .miniBtn {
     display: none;
   }
-   .desktopBtn {
+  .desktopBtn {
     display: block;
   }
 }
@@ -292,6 +294,26 @@ h3 {
 @media (max-width: 715px) {
   .photoWrapper {
     display: none;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .abilities {
+    font-size: 1.1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .infoBottom {
+    justify-content: space-around;
   }
 }
 
@@ -324,21 +346,9 @@ h3 {
 
 /* small portrait */
 
-@media (min-width: 500px) and (max-width: 550px) and (orientation: portrait) {
-  h2 {
-    font-size: 0.5em;
-  }
-}
-
 @media (min-width: 539px) and (max-width: 767px) and (orientation: portrait) {
   h2 {
     font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 767px) and (min-width: 450px) and (orientation: portrait) {
-  .abilities {
-    flex-direction: column;
   }
 }
 
@@ -373,19 +383,17 @@ h3 {
 @media (max-width: 450px) and (orientation: portrait) {
   .info {
     height: 75vh;
+    padding: 2rem 0;
   }
 
   h1 {
     font-size: 2.5rem;
+    text-align: center;
   }
 
   h2 {
     font-size: 1.5rem;
-  }
-
-  .abilities {
-    font-size: 1.1rem;
-    flex-direction: row;
+    text-align: center;
   }
 }
 
